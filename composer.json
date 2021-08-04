@@ -1,0 +1,57 @@
+{
+  "name": "custom-d/laravel-experian",
+  "description": "A laravel experian",
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "experian"
+  ],
+  "type": "library",
+  "authors": [
+    {
+      "name": "Craig Smith",
+      "email": "craig.smith@customd.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "illuminate/support": "^6.0|^7.0|^8.0",
+    "kamermans/guzzle-oauth2-subscriber": "^1.0",
+    "spatie/laravel-package-tools": "^1.4.3",
+    "myclabs/php-enum": "^1.8.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^4.0|^5.0|^6.0",
+    "phpunit/phpunit": "^8.4|^9.0",
+    "guzzlehttp/guzzle": "^6.3.1|^7.0.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "CustomD\\LaravelExperian\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "CustomD\\LaravelExperian\\": "src",
+      "CustomD\\LaravelExperian\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "phpunit": "phpunit"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "CustomD\\LaravelExperian\\ServiceProvider"
+      ],
+      "aliases": {
+        "DelphiSelect": "CustomD\\LaravelExperian\\Facades\\DelphiSelect"
+      }
+    }
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  }
+}
