@@ -15,6 +15,17 @@ class Submission extends Base
         'Options'        => Options::class
     ];
 
+    protected $defaults = [
+  //      'Options' => new Options()
+    ];
+
+
+    protected function fillDefaults(): void
+    {
+        parent::fillDefaults();
+        $this->Options = new Options();
+    }
+
 
     public function jsonSerialize()
     {

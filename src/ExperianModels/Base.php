@@ -29,14 +29,13 @@ abstract class Base implements JsonSerializable, Arrayable
         return $this->attributes[$key] ?? null;
     }
 
-    public function __set(string $key, $value): self
+    public function __set(string $key, $value): void
     {
         if ($this->hasSetMutator($key)) {
             $this->setMutatedAttributeValue($key, $value);
         } else {
             $this->setAttribute($key, $value);
         }
-        return $this;
     }
 
     public function getAttribute($key)

@@ -22,7 +22,9 @@ use CustomD\LaravelExperian\ExperianModels\UKLocation;
 use CustomD\LaravelExperian\ExperianModels\Application;
 use CustomD\LaravelExperian\ExperianModels\Residencies;
 use CustomD\LaravelExperian\ExperianModels\LocationItem;
+use CustomD\LaravelExperian\ExperianModels\ApplicantData;
 use CustomD\LaravelExperian\ExperianModels\ResidencyItem;
+use CustomD\LaravelExperian\ExperianModels\AffordabilityIQ;
 
 class LaravelExperianTest extends TestCase
 {
@@ -38,10 +40,6 @@ class LaravelExperianTest extends TestCase
         ];
     }
 
-    public function testExample()
-    {
-        $this->assertEquals(1, 1);
-    }
 
     protected function buildSubmission()
     {
@@ -54,6 +52,11 @@ class LaravelExperianTest extends TestCase
             'Surname'     => 'Mayer',
             'DateOfBirth' => '1981-06-19'
         ]);
+
+        $applicant->ApplicantData = new ApplicantData([
+            'AffordabilityIQ' => new AffordabilityIQ(),
+        ]);
+
         $submission->Applicants = new Applicants([$applicant]);
 
         $uklocation = new UKLocation([
@@ -100,6 +103,13 @@ class LaravelExperianTest extends TestCase
 
         $this->assertEquals('{
     "Submission": {
+        "Options": {
+            "ProductCode": "DelphiSelect",
+            "FullFBLRequired": true,
+            "AuthenticatePlusRequired": true,
+            "DetectRequired": true,
+            "TestDatabase": "A"
+        },
         "Applicants": [
             {
                 "ApplicantIdentifier": 1,
@@ -108,6 +118,12 @@ class LaravelExperianTest extends TestCase
                     "Forename": "Alexander",
                     "Surname": "Mayer",
                     "DateOfBirth": "1981-06-19"
+                },
+                "ApplicantData": {
+                    "AffordabilityIQ": {
+                        "JointApplicantNMI": 0,
+                        "MainApplicantNMI": 0
+                    }
                 }
             }
         ],
@@ -138,13 +154,6 @@ class LaravelExperianTest extends TestCase
             "ManualAuthenticationRequired": false,
             "SearchConsent": true
         },
-        "Options": {
-            "ProductCode": "DelphiSelect",
-            "FullFBLRequired": true,
-            "AuthenticatePlusRequired": true,
-            "DetectRequired": true,
-            "TestDatabase": "A"
-        },
         "ClientData": {
             "ClientAccountNumber": "A1234"
         }
@@ -152,13 +161,8 @@ class LaravelExperianTest extends TestCase
 }', json_encode($this->buildSubmission(), JSON_PRETTY_PRINT));
     }
 
-    public function DisabledtestCall()
     {
         Config::set('experian.credentials', [
-            'client_id'     => "xxx",
-            'client_secret' => "xxx",
-            'username'      => "xxx",
-            'password'      => "xxx",
         ]);
 
         Response::macro('getScore', function () {

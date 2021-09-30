@@ -9,6 +9,7 @@ class ApplicantData extends Base
         'PersonalDetails'   => PersonalDetails::class,
         'BankDetails'       => BankDetails::class,
         'EmploymentDetails' => EmploymentDetails::class,
-        'AdditionalData'    => AdditionalData::class
+        'AdditionalData'    => AdditionalData::class,
+        'AffordabilityIQ'   => AffordabilityIQ::class
     ];
 }
