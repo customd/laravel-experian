@@ -3,6 +3,7 @@
 namespace CustomD\LaravelExperian\ExperianModels;
 
 use CustomD\LaravelExperian\Consts\Gender;
+use CustomD\LaravelExperian\ExperianModels\YearMonth;
 
 class Person extends Base
 {
@@ -15,7 +16,7 @@ class Person extends Base
         "Gender"        => Gender::class,
         "DateOfBirth"   => 'string',
         'FormattedName' => 'string',
-        'Age'           => 'YearMonth',
+        'Age'           => YearMonth::class,
         'ExpinPIN'      => 'string'
     ];
 }
