@@ -161,8 +161,13 @@ class LaravelExperianTest extends TestCase
 }', json_encode($this->buildSubmission(), JSON_PRETTY_PRINT));
     }
 
+    public function DisabledtestCall()
     {
         Config::set('experian.credentials', [
+            'client_id'     => "xxx",
+            'client_secret' => "xxx",
+            'username'      => "xxx",
+            'password'      => "xxx",
         ]);
 
         Response::macro('getScore', function () {

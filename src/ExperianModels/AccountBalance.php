@@ -5,7 +5,7 @@ namespace CustomD\LaravelExperian\ExperianModels;
 use CustomD\LaravelExperian\Consts\AccountBalanceStatus;
 
 /**
- * \CustomD\LaravelExperian\ExperianModels\Response
+ * \CustomD\LaravelExperian\ExperianModels\AccountBalance
  *
  * @property \CustomD\LaravelExperian\Consts\AccountBalanceStatus $Status
  * @property string $AccountBalance

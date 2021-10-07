@@ -8,10 +8,10 @@ namespace CustomD\LaravelExperian\ExperianModels;
  * The first submitted applicant will be the main applicant.
  *
  * @property string $ApplicantIdentifier
- * @property string $Person
- * @property string $Alias
- * @property string $Association
- * @property string $ApplicantData
+ * @property \CustomD\LaravelExperian\ExperianModels\Person $Person
+ * @property \CustomD\LaravelExperian\ExperianModels\Aliases $Alias
+ * @property \CustomD\LaravelExperian\ExperianModels\AssociationItems $Association
+ * @property \CustomD\LaravelExperian\ExperianModels\ApplicantData $ApplicantData
 */
 class Applicant extends Base
 {
