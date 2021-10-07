@@ -4,6 +4,7 @@ namespace CustomD\LaravelExperian\ExperianModels;
 
 use CustomD\LaravelExperian\Consts\MaritalStatus;
 use CustomD\LaravelExperian\Consts\CountryOfBirth;
+use CustomD\LaravelExperian\Consts\ResidentialStatus;
 use CustomD\LaravelExperian\ExperianModels\Telephone;
 
 /**
