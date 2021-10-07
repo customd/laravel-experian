@@ -8,6 +8,12 @@ use CustomD\LaravelExperian\Consts\YesNo;
 
 /**
  * Output field only.
+ *
+ * @property \CustomD\LaravelExperian\Consts\Confirmed $Confirmed
+ * @property \CustomD\LaravelExperian\Consts\YesNo $Surname
+ * @property \CustomD\LaravelExperian\Consts\YesNo $Forname
+ * @property string YrsERSP
+ * @property string YrsERSF
  */
 class VRConfirmation extends Base
 {

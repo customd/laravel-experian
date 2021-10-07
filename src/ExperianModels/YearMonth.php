@@ -6,6 +6,9 @@ use CustomD\LaravelExperian\Consts\Gender;
 
 /**
  * Output field only. Age in years and months.
+ *
+ * @property string $Years
+ * @property string $months
  */
 class YearMonth extends Base
 {
