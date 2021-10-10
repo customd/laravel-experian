@@ -24,6 +24,5 @@ class Options extends Base
         "FullFBLRequired"          => true,
         "AuthenticatePlusRequired" => true,
         "DetectRequired"           => true,
-        "TestDatabase"             => Database::AGED,
     ];
 }
